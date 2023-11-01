@@ -1,0 +1,11 @@
+Agenda
+
+1 - Setup the github repository
+   a) new environment
+   b) mini project structure setup.py
+         setup.py is responsible for creating machine learning project
+         as a package
+   c) requirements.txt
+
+2 - Source folder and build the package
+   
