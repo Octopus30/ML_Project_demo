@@ -13,4 +13,10 @@ Agenda
 
 3 - project introduction and EDA
 
+      for preprocessing always notebook is best
+
+4 - Data Ingestion
+
+      train test split and preprocessing
+
    
