@@ -11,4 +11,6 @@ Agenda
 
       create the structure
 
+3 - project introduction and EDA
+
    
