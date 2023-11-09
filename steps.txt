@@ -19,4 +19,10 @@ Agenda
 
       train test split and preprocessing
 
+5 - Data transformation
+
+      imputing and transforming the data
+
+
+
    
