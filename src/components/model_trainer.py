@@ -39,15 +39,60 @@ class Modeltrainer:
                 'RandomForest':RandomForestRegressor(),
                 'Decision Tree':DecisionTreeRegressor(),
                 'Gradient Boosting':GradientBoostingRegressor(),
-                'Liner regression':LinearRegression(),
+                'Linear regression':LinearRegression(),
                 'K-Neighbours classifier': KNeighborsRegressor(),
                 'XGBClassifier':XGBRegressor(),
                 'Cat boosting classifier': CatBoostRegressor(verbose =False),
                 'Adaboost Classsifier':AdaBoostRegressor()
             }
             
+            params = {
+                "Decision Tree" : {
+                    'criterion' : ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    #'splitter' : ['best','random'],
+                    'max_depth' : [5,10,15,20],
+                    #'max_features' : ['auto','sqrt','log2'],
+                    
+                },
+                "RandomForest" : {
+                    'n_estimators' : [8,16,32,64,128,256],
+                    'criterion' : ['squared_error', 'friedman_mse', 'absolute_error', 'poisson']
+                },
+                'Gradient Boosting' : {
+                    'loss' : ['squared_error', 'absolute_error', 'huber', 'quantile'],
+                    'n_estimators' : [8,16,32,64,128,256],
+                    'learning_rate' : [0.0001,0.001,0.01],
+                    'subsample' : [0.6,0.7,0.75,0.8,0.85,0.9],
+                    
+                },
+                'Linear regression' : {},
+                
+                "K-Neighbours classifier" : {
+                    'algorithm' : ['auto','ball_tree','kd_tree','brute'],
+                    'n_neighbors' : [5,7,9,11]
+                },
+                'XGBClassifier' : {
+                    'learning_rate' : [0.0001,0.001,0.01],
+                    'n_estimators' : [8,16,32,64,128,256],                    
+
+                },
+                'Cat boosting classifier' : {
+                    'depth': [6,8,10],
+                    'learning_rate' : [0.0001,0.001,0.01],
+                    'iterations' : [30,50,100]
+
+                },
+                'Adaboost Classsifier' : {
+                    'learning_rate' : [0.0001,0.001,0.01],
+                    'n_estimators' : [8,16,32,64,128,256]
+
+                }
+                
+                
+            }
+            
             model_report:dict = evaluate_models(X_train=X_train,Y_train=Y_train,X_test = X_test,
-                                               Y_test =Y_test,models =models)
+                                               Y_test =Y_test,models =models , param = params)
             
             ################################################################
             
